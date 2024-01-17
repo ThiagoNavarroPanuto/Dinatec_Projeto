@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
+from dinacotacao.views import home, contato, sobre
 
-def my_view(request):
-    return HttpResponse('Dinatec peças e serviços LTDA')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', my_view)
+    path('', home), # Home
+    path('contato/', contato), # /Contato/
+    path('sobre/', sobre), # /sobre/
 ]
